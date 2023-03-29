@@ -68,69 +68,52 @@
 <div>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <style>
-                html, body {
-                    height: 100%;
-                    margin: 0;
-                    padding: 0;
-                }
-
-                #audio-container {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    height: 100%;
-                }
-
-                #play-pause-button {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                  /* Style the play/pause button */
+                  #play-pause {
                     width: 80px;
                     height: 80px;
-                    border-radius: 50%;
                     background-color: #333;
                     color: #fff;
-                    font-size: 36px;
+                    border: none;
+                    border-radius: 50%;
+                    font-size: 44px;
                     cursor: pointer;
-                    transition: background-color 0.2s;
-                }
-
-                #play-pause-button:hover {
-                    background-color: #555;
-                }
-
-                #play-pause-icon {
-                    margin-left: 10px;
-                }
+                  }
+                  /* Style the play symbol */
+                  #play-pause:before {
+                    content: '\25B6';
+                  }
+                  body {
+                    text-align: center;
+                  }
+                  /* Style the pause symbol */
+                  #play-pause.play:before {
+                    content: '\II';
+                  }
                 </style>
-            </head>
-            <body>
-                <div id="audio-container">
-                <audio id="my-audio"  autoplay loop>
-                    <source src="Background Music/basanta.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
+              </head>
+              <body>
+                <audio id="myAudio" autoplay loop>
+                  <source src="Background Music/basanta.mp3" type="audio/mpeg">
                 </audio>
-                <h4>Basanta.......❤️</h4>
-                <div id="play-pause-button" onclick="playPause()">
-                    <span id="play-pause-text"></span>
-                    <i id="play-pause-icon" class="fa fa-pause"></i>
-                </div>
+                <div>
+                  <h1 style="font-family: cursive; font-size: 36px; color: #8B008B; text-align: center;">Basanta.......❤️</h1>
+              </div>
+                <button id="play-pause" ></button>
+                
                 <script>
-                function playPause() {
-                    var audio = document.getElementById("my-audio");
-                    var text = document.getElementById("play-pause-text");
-                    var icon = document.getElementById("play-pause-icon");
+                  var audio = document.getElementById("myAudio");
+                  var playButton = document.getElementById("play-pause");
+                  
+                  playButton.addEventListener("click", function() {
                     if (audio.paused) {
-                    audio.play();
-                    text.textContent = "";
-                    icon.className = "fa fa-pause";
+                      audio.play();
+                      playButton.classList.add("play");
                     } else {
-                    audio.pause();
-                    text.textContent = "";
-                    icon.className = "fa fa-play";
+                      audio.pause();
+                      playButton.classList.remove("play");
                     }
-                }
+                  });
                 </script>
 </div>
 <br>
