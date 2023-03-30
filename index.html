@@ -66,55 +66,51 @@
 <br>
 <br>
 <div>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                <style>
-                  /* Style the play/pause button */
-                  #play-pause {
-                    width: 80px;
-                    height: 80px;
-                    background-color: #333;
-                    color: #fff;
-                    border: none;
-                    border-radius: 50%;
-                    font-size: 44px;
-                    cursor: pointer;
-                  }
-                  /* Style the play symbol */
-                  #play-pause:before {
-                    content: '\25B6';
-                  }
-                  body {
-                    text-align: center;
-                  }
-                  /* Style the pause symbol */
-                  #play-pause.play:before {
-                    content: '\II';
-                  }
-                </style>
-              </head>
-              <body>
-                <audio id="myAudio" autoplay loop>
-                  <source src="Background Music/basanta.mp3" type="audio/mpeg">
-                </audio>
-                <div>
-                  <h1 style="font-family: cursive; font-size: 36px; color: #8B008B; text-align: center;">Basanta.......❤️</h1>
-              </div>
-                <button id="play-pause" ></button>
-                
-                <script>
-                  var audio = document.getElementById("myAudio");
-                  var playButton = document.getElementById("play-pause");
-                  
-                  playButton.addEventListener("click", function() {
-                    if (audio.paused) {
-                      audio.play();
-                      playButton.classList.add("play");
-                    } else {
-                      audio.pause();
-                      playButton.classList.remove("play");
-                    }
-                  });
-                </script>
+ <p>
+  <style>
+    #play-pause {
+      width: 80px;
+      height: 80px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 44px;
+      cursor: pointer;
+    }
+    #play-pause:before {
+      content: '\25B6';
+    }
+    
+    #play-pause.play:before {
+      content: '\II';
+    }
+  </style>
+ </p>
+</head>
+<body>
+  <audio id="myAudio" autoplay loop>
+    <source src="Background Music/basanta.mp3" type="audio/mpeg">
+  </audio>
+  <div>
+    <h1 style="font-family: cursive; font-size: 36px; color: #8B008B; text-align: center;">Basanta.......❤️</h1>
+</div>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button id="play-pause" ></button>
+  
+  <script>
+    var audio = document.getElementById("myAudio");
+    var playButton = document.getElementById("play-pause");
+    
+    playButton.addEventListener("click", function() {
+      if (audio.paused) {
+        audio.play();
+        playButton.classList.add("play");
+      } else {
+        audio.pause();
+        playButton.classList.remove("play");
+      }
+    });
+  </script>
 </div>
 <br>
 <div style="text-align: center;">
