@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +18,59 @@
 <li class="social-item"><a class="social-link text-light" href="https://www.instagram.com/grishkhadka/" target="_main"><i class="ti-instagram" aria-hidden="true"></i></a></li>
 <li class="social-item"><a class="social-link text-light" href="https://gallery.grishkhadka.com.np/"><i class="ti-gallery" aria-hidden="true"></i></a></li>
 </ul>
+<style>
+  .clock {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 10;
+  
+  }
+
+  .clock-display {
+    font-size: 18px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #000000;
+    text-align: center;
+    padding: 10px;
+    border: 5px solid #fff;
+    border-radius: 5px;
+  }
+
+  .clock-display span {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  .clock-display .time {
+    font-weight: bold;
+  }
+
+  .clock-display .label {
+    font-size: 18px;
+    font-weight: bold;
+  }
+</style>
+<div class="clock">
+  <div class="clock-display" id="clockDisplay">
+    <span class="time" id="timeDisplay"></span>
+    <br>
+    <span class="label">Time</span>
+  </div>
+</div>
+
+<script>
+  function updateClock() {
+    var now = new Date();
+    var hours = String(now.getHours()).padStart(2, '0');
+    var minutes = String(now.getMinutes()).padStart(2, '0');
+    var seconds = String(now.getSeconds()).padStart(2, '0');
+    var time = hours + ':' + minutes + ':' + seconds;
+    document.getElementById('timeDisplay').textContent = time;
+  }
+
+  setInterval(updateClock, 1000);
+</script>
 <div class="header-content">
 <h4 class="header-subtitle">Hello, I am</h4>
 <h1 class="header-title">Grish Khadka</h1>
@@ -521,5 +571,43 @@ box-shadow: 3px 3px 10px #888888;
 }
 
   </style>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html> 
